@@ -1,0 +1,20 @@
+{
+  "name": "claude-project-starter",
+  "owner": {
+    "name": "hyomin"
+  },
+  "metadata": {
+    "description": "Project documentation structure, tracking workflow, and development automation skills",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "project-starter",
+      "source": "./plugins/project-starter",
+      "description": "Standard project setup with PLAN/PROGRESS workflow, issue tracking, research management, and architecture decision records",
+      "version": "1.0.0",
+      "keywords": ["project-setup", "documentation", "workflow", "scaffolding"],
+      "category": "productivity"
+    }
+  ]
+}

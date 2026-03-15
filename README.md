@@ -61,11 +61,11 @@ project/
 ## Installation
 
 ```bash
-# From local directory
-claude plugin install /path/to/claude-project-starter
+# 1. Add marketplace
+/plugin marketplace add luckyhyom/claude-project-starter
 
-# From GitHub (after publishing)
-# claude plugin install project-starter@your-marketplace
+# 2. Install plugin
+/plugin install project-starter@claude-project-starter
 ```
 
 ## Usage
