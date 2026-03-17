@@ -14,6 +14,7 @@ A Claude Code plugin that provides standard project documentation structure, tra
 | `/research` | Check existing references before web searching |
 | `/update-docs` | Sync PLAN.md and PROGRESS.md after work |
 | `/review-architecture` | Verify code compliance with architecture rules |
+| `/translate-docs` | Update outdated translation files with commit hash tracking |
 
 ### Rules
 
@@ -38,6 +39,8 @@ project/
 ├── PLAN.md                      # Task checklist by phase
 ├── PROGRESS.md                  # Current status and agent handoff (slim)
 ├── README.md                    # Minimal project description
+├── blog/                        # Deep-dive posts (written on user request)
+├── daily/                       # Human-readable daily work reports
 ├── .claude/rules/               # Development rules
 │   ├── commit-rules.md          #   Conventional Commits + project scopes
 │   ├── code-style.md            #   Lint, naming, formatting, comment guidelines
@@ -65,6 +68,8 @@ project/
 - **Code Reuse:** CLAUDE.md includes instructions for agents to search existing code before writing new utilities.
 - **Comments:** code-style.md includes comment guidelines with detail levels (Why > What > None).
 - **Pitfalls:** pitfalls.md starts with common agent mistakes and grows with project experience.
+- **daily/ vs blog/:** `daily/` is for every work session (human review, TIL). `blog/` is for deep-dive posts on specific topics (user request only).
+- **Translations:** `/translate-docs` tracks commit hashes to skip up-to-date translations. Supports any language.
 
 ### Workflow
 
@@ -96,6 +101,12 @@ After installing, start a new project:
 The skill will ask about your tech stack, architecture, and generate all project files accordingly.
 
 ## Changelog
+
+### v1.2.0 (2026-03-17)
+
+- **New skill:** `/translate-docs` — update outdated translations with commit hash tracking (any language)
+- **Enhanced:** `/init-project` — generates `blog/` and `daily/` directories with daily report template
+- **Added:** CLAUDE.md for plugin development rules and update process
 
 ### v1.1.0 (2026-03-17)
 

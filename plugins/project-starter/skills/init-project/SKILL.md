@@ -26,8 +26,10 @@ Ask the user (skip if already provided via `$ARGUMENTS` or conversation context)
 CLAUDE.md          — Agent instructions (session startup, documentation rules, workflow)
 AGENTS.md          — Cross-agent entry point referencing CLAUDE.md
 PLAN.md            — Task checklist by phase (empty phases)
-PROGRESS.md        — Completion log and agent handoff notes (empty template)
+PROGRESS.md        — Agent handoff notes, current status, recent 2-3 sessions only
 README.md          — Minimal project description with links to docs/
+blog/              — Deep-dive posts on specific topics (written on user request only)
+daily/             — Human-readable daily work reports (TIL, decisions, file map)
 ```
 
 **CLAUDE.md must include:**
@@ -41,6 +43,8 @@ README.md          — Minimal project description with links to docs/
 ### 3. Create documentation structure
 
 ```
+blog/                           — Deep-dive posts (user request only)
+daily/                          — Daily work reports for human review
 docs/
 ├── INDEX.md                    — Central document map
 ├── planning/
@@ -55,6 +59,33 @@ docs/
 └── conversations/
     └── LOG.md                  — User request log (written on request only)
 ```
+
+**daily/ report template:**
+
+```markdown
+# YYYY-MM-DD — Title
+
+## One-line summary
+
+## Work done
+(Grouped by commit or logical unit)
+
+## Key decisions
+(Table: decision | reason)
+
+## Changed files
+(File map with annotations)
+
+## TIL
+(2-3 key learnings from today)
+
+## Next
+(What to do next)
+```
+
+**blog/ vs daily/ distinction:**
+- `daily/` — every work session, holistic summary, human-readable review
+- `blog/` — specific topic deep-dive, only when user explicitly requests
 
 ### 4. Create development rules
 
