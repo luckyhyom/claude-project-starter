@@ -35,6 +35,8 @@ README.md          — Minimal project description with links to docs/
 - Documentation language rules
 - Commit workflow (update PROGRESS.md on every commit, mark PLAN.md tasks)
 - Link to docs/INDEX.md and .claude/rules/
+- **Code Reuse section:** instruct agents to search existing code before writing new helpers/utilities. List the project's key directories for shared code (e.g., utils, shared models, shared repositories).
+- **PROGRESS.md guidance:** keep only recent 2-3 sessions; older history lives in git log
 
 ### 3. Create documentation structure
 
@@ -61,21 +63,46 @@ Based on tech stack answers, generate:
 ```
 .claude/rules/
 ├── commit-rules.md       — Conventional Commits (extend user-level with project scopes)
-├── code-style.md         — Language-specific lint, naming, formatting
+├── code-style.md         — Language-specific lint, naming, formatting, comment guidelines
 ├── architecture.md       — Architecture pattern, folder structure, layer rules
 ├── testing.md            — Test strategy, conventions, what to test
-└── pitfalls.md           — Empty template for mistake prevention
+└── pitfalls.md           — Mistake prevention log with starter entries
 ```
 
 **For code-style.md, ask or infer:**
 - Linter (e.g., very_good_analysis for Dart, eslint for JS/TS)
 - Formatter and line length
 - Naming conventions for the language
+- **Comment guidelines must include:**
+  - Comment language (match project's primary language)
+  - Detail levels: **Why** (default — design decisions, trade-offs) > **What** (framework magic not readable from code) > **None** (self-explanatory code)
+  - Doc comments (`///` or `/** */`) for public API (classes, methods, fields)
+  - Inline comments for implementation details
+  - Section dividers format (if applicable)
+  - What NOT to comment (obvious code, simple getters, commented-out code)
 
 **For architecture.md, ask or infer:**
 - Architecture pattern (MVVM, MVC, Clean Architecture, etc.)
 - Folder structure (feature-first vs layer-first)
 - State management (if applicable)
+
+**For pitfalls.md, include these starter entries:**
+
+```markdown
+# Pitfalls
+
+> Known mistakes and rules to prevent them. Add new entries when mistakes are discovered.
+
+## DON'T: Delete user-created files without asking
+- **Rule:** Never delete files the user created, even if empty. Ask first.
+
+## DON'T: Modify documents without explaining changes first
+- **Rule:** Summarize all planned changes and get approval before writing.
+
+## DO: Record progress before ending a session
+- **Rule:** Update PROGRESS.md even without code commits when significant
+  decisions are made or work context changes.
+```
 
 ### 5. Create issue template
 

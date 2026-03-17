@@ -1,7 +1,7 @@
 {
   "name": "project-starter",
-  "version": "1.0.0",
-  "description": "Standard project documentation structure, tracking workflow, and development automation skills. Includes PLAN/PROGRESS workflow, issue tracking, research management, and architecture decision records.",
+  "version": "1.1.0",
+  "description": "Standard project documentation structure, tracking workflow, and development automation skills. Includes PLAN/PROGRESS workflow, issue tracking, research management, architecture review, and code quality rules.",
   "author": "hyomin",
-  "tags": ["project-setup", "documentation", "workflow", "scaffolding"]
+  "tags": ["project-setup", "documentation", "workflow", "scaffolding", "architecture"]
 }
