@@ -65,7 +65,7 @@ project/
 /plugin marketplace add luckyhyom/claude-project-starter
 
 # 2. Install plugin
-/plugin install project-starter@claude-project-starter
+/plugin install project-starter@luckyhyom-claude-project-starter
 ```
 
 ## Usage

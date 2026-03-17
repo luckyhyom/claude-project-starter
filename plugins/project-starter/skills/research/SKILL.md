@@ -17,9 +17,18 @@ Look up existing project references before performing new web searches.
 
 2. **If not found or insufficient:**
    - Use `WebSearch` to find up-to-date information on the topic
+   - Use Context7 plugin for library API and documentation lookups
    - Summarize findings for the user
 
-3. **Save results:**
+3. **Verify before presenting:**
+   - Never present unverified information as fact — this applies to all web research results, not just numbers or versions
+   - When citing external info, include the source URL
+   - If a claim cannot be verified via primary sources, mark it with the reason:
+     - `(unverified — site blocked access)` — primary source exists but could not be fetched; likely accurate, recommend manual check
+     - `(unverified — no primary source found)` — no authoritative source located; treat as uncertain
+   - Trusted primary sources: official docs, GitHub repos, pub.dev, arxiv, HuggingFace model cards
+
+4. **Save results:**
    - If the research produced useful new information, ask the user whether to save it
    - If yes, save to `docs/references/{topic-name}.md` with a consistent format:
      ```markdown
