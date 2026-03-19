@@ -2,6 +2,10 @@
 
 A Claude Code plugin that provides standard project documentation structure, tracking workflow, and development automation.
 
+Current release: `v1.2.0`
+
+This repository packages one Claude plugin at `plugins/project-starter` and publishes marketplace metadata from the repository root.
+
 ## What's Included
 
 ### Skills
@@ -29,6 +33,15 @@ A Claude Code plugin that provides standard project documentation structure, tra
 | `PostToolUse` (Edit/Write) | Auto-format code files after modification |
 
 Supported languages: Dart, JS/TS, Python, Go, Rust
+
+### Hook Runtime Notes
+
+The formatting hook is a convenience feature, not a required quality gate.
+
+- Uses `jq` to read tool input payloads.
+- Tries `npx prettier` for JS/TS, JSON, CSS, and Markdown files.
+- Tries `python3 -m black`, `gofmt`, `rustfmt`, and `dart format` for supported languages.
+- If a formatter is unavailable in the local environment, the hook may quietly skip formatting.
 
 ### Documentation Structure Created by `/init-project`
 
@@ -99,6 +112,15 @@ After installing, start a new project:
 ```
 
 The skill will ask about your tech stack, architecture, and generate all project files accordingly.
+
+## Release Checklist
+
+Before publishing a new version:
+
+1. Sync the root metadata in `.claude-plugin/` with `plugins/project-starter/.claude-plugin/plugin.json`.
+2. Update the README feature list, version, and changelog to match the shipped plugin contents.
+3. Confirm `.claude-plugin/marketplace.json` points to the correct plugin version and description.
+4. Verify the documented hook dependencies still match `plugins/project-starter/hooks/hooks.json`.
 
 ## Changelog
 

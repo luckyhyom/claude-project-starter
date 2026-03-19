@@ -5,15 +5,15 @@
   },
   "metadata": {
     "description": "Project documentation structure, tracking workflow, and development automation skills",
-    "version": "1.0.0"
+    "version": "1.2.0"
   },
   "plugins": [
     {
       "name": "project-starter",
       "source": "./plugins/project-starter",
-      "description": "Standard project setup with PLAN/PROGRESS workflow, issue tracking, research management, and architecture decision records",
-      "version": "1.0.0",
-      "keywords": ["project-setup", "documentation", "workflow", "scaffolding"],
+      "description": "Standard project setup with PLAN/PROGRESS workflow, issue tracking, research management, architecture review, and code quality rules",
+      "version": "1.2.0",
+      "keywords": ["project-setup", "documentation", "workflow", "scaffolding", "architecture"],
       "category": "productivity"
     }
   ]
